@@ -144,7 +144,7 @@ function heap(arr) {
       heapify(arr, i, 0);
     }
     return arr;
-  }
+}
 
   const simpleMergeSort = (arr) => {
 

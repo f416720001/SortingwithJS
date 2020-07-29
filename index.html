@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>JS排序演算法</title>
   </head>
   <body>
     <style>
@@ -49,6 +49,40 @@
       li {
         font-size: 1.5em;
       }
+
+      ol {
+        padding-inline-start: 60px;
+      }
+    </style>
+    <style type="text/css">
+      <!--
+              /**
+               * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+               * (http://qbnz.com/highlighter/ and http://geshi.org/)
+               */
+              .javascript .de1, .javascript .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;color: #000020;}
+              .javascript  {font-family:monospace;color: #006; border: 1px solid #d0d0d0; background-color: #f0f0f0;}
+              .javascript a:link {color: #000060;}
+              .javascript a:hover {background-color: #f0f000;}
+              .javascript .imp {font-weight: bold; color: red;}
+              .javascript li, .javascript .li1 {font-weight: normal; vertical-align:top;font: normal normal 130% 'Courier New', Courier, monospace; color: #003030;}
+              .javascript .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+              .javascript .li2 {font-weight: bold; vertical-align:top;font-weight: bold; color: #006060;}
+              .javascript .kw1 {color: #000066; font-weight: bold;}
+              .javascript .kw2 {color: #003366; font-weight: bold;}
+              .javascript .kw3 {color: #000066;}
+              .javascript .co1 {color: #006600; font-style: italic;}
+              .javascript .co2 {color: #009966; font-style: italic;}
+              .javascript .coMULTI {color: #006600; font-style: italic;}
+              .javascript .es0 {color: #000099; font-weight: bold;}
+              .javascript .br0 {color: #009900;}
+              .javascript .sy0 {color: #339933;}
+              .javascript .st0 {color: #3366CC;}
+              .javascript .nu0 {color: #CC0000;}
+              .javascript .me1 {color: #660066;}
+              .javascript span.xtra { display:block; }
+
+              --!>
     </style>
     <div class="navigation">
       <button class="prev">Prev</button>
@@ -66,6 +100,7 @@
         <img src="01.png" alt="" style="" />
       </div>
     </container>
+
     <container>
       <div class="container">
         <h1>穩定的排序</h1>
@@ -76,6 +111,737 @@
         <li>選擇排序（selection sort）— O(n<sup>2</sup>)</li>
         <li>堆積排序（heap sort）— O(nlogn)</li>
         <li>快速排序（quick sort）— O(nlogn)</li>
+      </div>
+    </container>
+
+    <container>
+      <div class="container">
+        <h1>泡沫排序（bubble sort）</h1>
+        <div class="javascript">
+          <ol>
+            <li class="li1">
+              <div class="de1">
+                <span class="kw2">function</span> bubble<span class="br0"
+                  >&#40;</span
+                >arr<span class="br0">&#41;</span>
+                <span class="br0">&#123;</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; <span class="kw2">var</span> len
+                <span class="sy0">=</span> arr.<span class="me1">length</span
+                ><span class="sy0">,</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; &nbsp; sortedItems <span class="sy0">=</span>
+                <span class="nu0">0</span><span class="sy0">;</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; <span class="kw1">while</span>
+                <span class="br0">&#40;</span>sortedItems
+                <span class="sy0">&lt;</span> len<span class="br0">&#41;</span>
+                <span class="br0">&#123;</span>
+              </div>
+            </li>
+            <li class="li2">
+              <div class="de2">
+                &nbsp; &nbsp; <span class="kw1">for</span>
+                <span class="br0">&#40;</span><span class="kw2">var</span> i
+                <span class="sy0">=</span> <span class="nu0">0</span
+                ><span class="sy0">;</span> i <span class="sy0">&lt;</span> len
+                <span class="sy0">-</span> sortedItems
+                <span class="sy0">-</span> <span class="nu0">1</span
+                ><span class="sy0">;</span> i<span class="sy0">++</span
+                ><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; &nbsp; &nbsp; <span class="kw2">var</span> currentItem
+                <span class="sy0">=</span> arr<span class="br0">&#91;</span
+                >i<span class="br0">&#93;</span><span class="sy0">,</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; &nbsp; &nbsp; &nbsp; nextItem
+                <span class="sy0">=</span> arr<span class="br0">&#91;</span>i
+                <span class="sy0"~ezentity_gt+ezentity_lt~/span>
+                <span class="nu0">1</span><span class="br0">&#93;</span
+                ><span class="sy0">;</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; &nbsp; &nbsp; <span class="kw1">if</span>
+                <span class="br0">&#40;</span>currentItem
+                <span class="sy0">&gt;</span> nextItem<span class="br0"
+                  >&#41;</span
+                >
+                <span class="br0">&#123;</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; &nbsp; &nbsp; &nbsp; swap<span class="br0">&#40;</span
+                >arr<span class="sy0">,</span> currentItem<span class="sy0"
+                  >,</span
+                >
+                nextItem<span class="br0">&#41;</span><span class="sy0">;</span>
+              </div>
+            </li>
+            <li class="li2">
+              <div class="de2">
+                &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; &nbsp; <span class="br0">&#125;</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; &nbsp; sortedItems <span class="sy0">+=</span>
+                <span class="nu0">1</span><span class="sy0">;</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">&nbsp; <span class="br0">&#125;</span></div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; <span class="kw1">return</span> arr<span class="sy0"
+                  >;</span
+                >
+              </div>
+            </li>
+            <li class="li2">
+              <div class="de2"><span class="br0">&#125;</span></div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </container>
+
+    <container>
+      <div class="container">
+        <h1>插入排序（insertion sort）</h1>
+        <div class="javascript">
+          <ol>
+            <li class="li1">
+              <div class="de1">
+                <span class="kw2">function</span> insertion<span class="br0"
+                  >&#40;</span
+                >arr<span class="br0">&#41;</span>
+                <span class="br0">&#123;</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; <span class="kw2">var</span> len
+                <span class="sy0">=</span> arr.<span class="me1">length</span
+                ><span class="sy0">;</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp;
+                <span class="co1"
+                  >// insert from 2nd item to last time into previous sorted
+                  items</span
+                >
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; <span class="kw1">for</span>
+                <span class="br0">&#40;</span><span class="kw2">var</span> i
+                <span class="sy0">=</span> <span class="nu0">1</span
+                ><span class="sy0">;</span> i
+                <span class="sy0">&lt;</span> len<span class="sy0">;</span>
+                i<span class="sy0">++</span><span class="br0">&#41;</span>
+                <span class="br0">&#123;</span>
+              </div>
+            </li>
+            <li class="li2">
+              <div class="de2">
+                &nbsp; &nbsp; <span class="kw2">var</span> key
+                <span class="sy0">=</span> arr<span class="br0">&#91;</span
+                >i<span class="br0">&#93;</span><span class="sy0">,</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; &nbsp; &nbsp; j <span class="sy0">=</span> i
+                <span class="sy0">-</span> <span class="nu0">1</span
+                ><span class="sy0">;</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; &nbsp;
+                <span class="co1">// move ahead till meet the smaller one</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; &nbsp; <span class="kw1">while</span>
+                <span class="br0">&#40;</span>j <span class="sy0">&gt;=</span>
+                <span class="nu0">0</span>
+                <span class="sy0">&amp;&amp;</span> arr<span class="br0"
+                  >&#91;</span
+                >j<span class="br0">&#93;</span>
+                <span class="sy0">&gt;</span> key<span class="br0">&#41;</span>
+                <span class="br0">&#123;</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; &nbsp; &nbsp; args<span class="br0">&#91;</span>j <span
+                class="sy0"~ezentity_gt+ezentity_lt~/span>
+                <span class="nu0">1</span><span class="br0">&#93;</span>
+                <span class="sy0">=</span> args<span class="br0">&#91;</span
+                >j<span class="br0">&#93;</span><span class="sy0">;</span>
+              </div>
+            </li>
+            <li class="li2">
+              <div class="de2">
+                &nbsp; &nbsp; &nbsp; j<span class="sy0">--;</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; &nbsp; <span class="br0">&#125;</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; &nbsp;
+                <span class="co1"
+                  >//insert the mininum value to correct position</span
+                >
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; &nbsp; arr<span class="br0">&#91;</span>j <span
+                class="sy0"~ezentity_gt+ezentity_lt~/span>
+                <span class="nu0">1</span><span class="br0">&#93;</span>
+                <span class="sy0">=</span> key<span class="sy0">;</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">&nbsp; <span class="br0">&#125;</span></div>
+            </li>
+            <li class="li2">
+              <div class="de2">
+                &nbsp; <span class="kw1">return</span> arr<span class="sy0"
+                  >;</span
+                >
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1"><span class="br0">&#125;</span></div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </container>
+
+    <container>
+      <div class="container">
+        <h1>合併排序（merge sort）</h1>
+        <div class="javascript">
+          <ol>
+            <li class="li1">
+              <div class="de1">
+                <span class="kw2">const</span> simpleMergeSort
+                <span class="sy0">=</span>
+                <span class="br0">&#40;</span>arr<span class="br0">&#41;</span>
+                <span class="sy0">=&gt;</span> <span class="br0">&#123;</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; &nbsp; <span class="kw2">const</span> merge
+                <span class="sy0">=</span>
+                <span class="br0">&#40;</span>leftArray<span class="sy0"
+                  >,</span
+                >
+                rightArray<span class="br0">&#41;</span>
+                <span class="sy0">=&gt;</span> <span class="br0">&#123;</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; &nbsp; &nbsp; let result <span class="sy0">=</span>
+                <span class="br0">&#91;</span><span class="br0">&#93;</span
+                ><span class="sy0">;</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; &nbsp; &nbsp; let nowIndex <span class="sy0">=</span>
+                <span class="nu0">0</span><span class="sy0">,</span> left
+                <span class="sy0">=</span> <span class="nu0">0</span
+                ><span class="sy0">,</span> right <span class="sy0">=</span>
+                <span class="nu0">0</span><span class="sy0">;</span>
+              </div>
+            </li>
+            <li class="li2">
+              <div class="de2">
+                &nbsp; &nbsp; &nbsp; <span class="kw2">const</span> leftLength
+                <span class="sy0">=</span> leftArray.<span class="me1"
+                  >length</span
+                ><span class="sy0">;</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; &nbsp; &nbsp; <span class="kw2">const</span> rightLength
+                <span class="sy0">=</span> rightArray.<span class="me1"
+                  >length</span
+                ><span class="sy0">;</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; &nbsp; &nbsp; <span class="kw1">while</span>
+                <span class="br0">&#40;</span>left
+                <span class="sy0">&lt;</span> leftLength
+                <span class="sy0">&amp;&amp;</span> right
+                <span class="sy0">&lt;</span> rightLength<span class="br0"
+                  >&#41;</span
+                >
+                <span class="br0">&#123;</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">if</span>
+                <span class="br0">&#40;</span>leftArray<span class="br0"
+                  >&#91;</span
+                >left<span class="br0">&#93;</span>
+                <span class="sy0">&lt;</span> rightArray<span class="br0"
+                  >&#91;</span
+                >right<span class="br0">&#93;</span
+                ><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; result<span class="br0"
+                  >&#91;</span
+                >nowIndex<span class="sy0">++</span
+                ><span class="br0">&#93;</span>
+                <span class="sy0">=</span> leftArray<span class="br0"
+                  >&#91;</span
+                >left<span class="sy0">++</span><span class="br0">&#93;</span
+                ><span class="sy0">;</span>
+              </div>
+            </li>
+            <li class="li2">
+              <div class="de2">
+                &nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span>
+                <span class="kw1">else</span> <span class="br0">&#123;</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; result<span class="br0"
+                  >&#91;</span
+                >nowIndex<span class="sy0">++</span
+                ><span class="br0">&#93;</span>
+                <span class="sy0">=</span> rightArray<span class="br0"
+                  >&#91;</span
+                >right<span class="sy0">++</span><span class="br0">&#93;</span
+                ><span class="sy0">;</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; &nbsp; &nbsp; <span class="kw1">while</span>
+                <span class="br0">&#40;</span>left
+                <span class="sy0">&lt;</span> leftLength<span class="br0"
+                  >&#41;</span
+                >
+                <span class="br0">&#123;</span>
+              </div>
+            </li>
+            <li class="li2">
+              <div class="de2">
+                &nbsp; &nbsp; &nbsp; &nbsp; result<span class="br0">&#91;</span
+                >nowIndex<span class="sy0">++</span
+                ><span class="br0">&#93;</span>
+                <span class="sy0">=</span> leftArray<span class="br0"
+                  >&#91;</span
+                >left<span class="sy0">++</span><span class="br0">&#93;</span
+                ><span class="sy0">;</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; &nbsp; &nbsp; <span class="kw1">while</span>
+                <span class="br0">&#40;</span>right
+                <span class="sy0">&lt;</span> rightLength<span class="br0"
+                  >&#41;</span
+                >
+                <span class="br0">&#123;</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; &nbsp; &nbsp; &nbsp; result<span class="br0">&#91;</span
+                >nowIndex<span class="sy0">++</span
+                ><span class="br0">&#93;</span>
+                <span class="sy0">=</span> rightArray<span class="br0"
+                  >&#91;</span
+                >right<span class="sy0">++</span><span class="br0">&#93;</span
+                ><span class="sy0">;</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span>
+              </div>
+            </li>
+            <li class="li2">
+              <div class="de2">
+                &nbsp; &nbsp; &nbsp; <span class="kw1">return</span> result<span
+                  class="sy0"
+                  >;</span
+                >
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; &nbsp; <span class="br0">&#125;</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; &nbsp; <span class="kw2">const</span> _mergeSort
+                <span class="sy0">=</span>
+                <span class="br0">&#40;</span>arr<span class="br0">&#41;</span>
+                <span class="sy0">=&gt;</span> <span class="br0">&#123;</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; &nbsp; &nbsp; <span class="kw2">const</span> length
+                <span class="sy0">=</span> arr.<span class="me1">length</span
+                ><span class="sy0">;</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; &nbsp; &nbsp; <span class="kw1">if</span>
+                <span class="br0">&#40;</span>length
+                <span class="sy0">&lt;=</span> <span class="nu0">1</span
+                ><span class="br0">&#41;</span>
+                <span class="kw1">return</span> arr<span class="sy0">;</span>
+              </div>
+            </li>
+            <li class="li2">
+              <div class="de2">
+                &nbsp; &nbsp; &nbsp; <span class="kw2">const</span> middle
+                <span class="sy0">=</span> Math.<span class="me1">floor</span
+                ><span class="br0">&#40;</span>length
+                <span class="sy0">/</span> <span class="nu0">2</span
+                ><span class="br0">&#41;</span><span class="sy0">;</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; &nbsp; &nbsp; <span class="kw2">const</span> leftArray
+                <span class="sy0">=</span> _mergeSort<span class="br0"
+                  >&#40;</span
+                >arr.<span class="me1">slice</span><span class="br0">&#40;</span
+                ><span class="nu0">0</span
+                ><span class="sy0">,</span> middle<span class="br0">&#41;</span
+                ><span class="br0">&#41;</span><span class="sy0">;</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; &nbsp; &nbsp; <span class="kw2">const</span> rightArray
+                <span class="sy0">=</span> _mergeSort<span class="br0"
+                  >&#40;</span
+                >arr.<span class="me1">slice</span
+                ><span class="br0">&#40;</span>middle<span class="sy0">,</span>
+                length<span class="br0">&#41;</span
+                ><span class="br0">&#41;</span><span class="sy0">;</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; &nbsp; &nbsp; <span class="kw1">return</span> merge<span
+                  class="br0"
+                  >&#40;</span
+                >leftArray<span class="sy0">,</span> rightArray<span class="br0"
+                  >&#41;</span
+                ><span class="sy0">;</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; &nbsp; <span class="br0">&#125;</span>
+              </div>
+            </li>
+            <li class="li2">
+              <div class="de2">
+                &nbsp; &nbsp; <span class="kw1">return</span> _mergeSort<span
+                  class="br0"
+                  >&#40;</span
+                >arr<span class="br0">&#41;</span><span class="sy0">;</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">&nbsp; <span class="br0">&#125;</span></div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </container>
+
+    <container>
+      <div class="container">
+        <h1>選擇排序（selection sort）</h1>
+        <div class="javascript">
+          <ol>
+            <li class="li1">
+              <div class="de1">
+                <span class="kw2">function</span> selection<span class="br0"
+                  >&#40;</span
+                >arr<span class="br0">&#41;</span>
+                <span class="br0">&#123;</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; <span class="kw2">var</span> len
+                <span class="sy0">=</span> arr.<span class="me1">length</span
+                ><span class="sy0">;</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; <span class="kw1">for</span>
+                <span class="br0">&#40;</span><span class="kw2">var</span> i
+                <span class="sy0">=</span> <span class="nu0">0</span
+                ><span class="sy0">;</span> i
+                <span class="sy0">&lt;</span> len<span class="sy0">;</span>
+                i<span class="sy0">++</span><span class="br0">&#41;</span>
+                <span class="br0">&#123;</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; &nbsp; <span class="kw2">var</span> min
+                <span class="sy0">=</span> arr<span class="br0">&#91;</span
+                >i<span class="br0">&#93;</span><span class="sy0">,</span>
+              </div>
+            </li>
+            <li class="li2">
+              <div class="de2">
+                &nbsp; &nbsp; &nbsp; minPos <span class="sy0">=</span> i<span
+                  class="sy0"
+                  >;</span
+                >
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; &nbsp;
+                <span class="co1">// find minimum item from next item</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; &nbsp; <span class="kw1">for</span>
+                <span class="br0">&#40;</span><span class="kw2">var</span> j
+                <span class="sy0">=</span> i <span
+                class="sy0"~ezentity_gt+ezentity_lt~/span>
+                <span class="nu0">1</span><span class="sy0">;</span> j
+                <span class="sy0">&lt;</span> len<span class="sy0">;</span>
+                j<span class="sy0">++</span><span class="br0">&#41;</span>
+                <span class="br0">&#123;</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; &nbsp; &nbsp; <span class="kw1">if</span>
+                <span class="br0">&#40;</span>arr<span class="br0">&#91;</span
+                >j<span class="br0">&#93;</span>
+                <span class="sy0">&lt;</span> min<span class="br0">&#41;</span>
+                <span class="br0">&#123;</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; &nbsp; &nbsp; &nbsp; min
+                <span class="sy0">=</span> arr<span class="br0">&#91;</span
+                >j<span class="br0">&#93;</span><span class="sy0">;</span>
+              </div>
+            </li>
+            <li class="li2">
+              <div class="de2">
+                &nbsp; &nbsp; &nbsp; &nbsp; minPos
+                <span class="sy0">=</span> j<span class="sy0">;</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; &nbsp; <span class="br0">&#125;</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; &nbsp; <span class="co1">//method 1 swap</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; &nbsp;
+                <span class="co1"
+                  >//[arr[i], arr[minPos]] = [arr[minPos], arr[i]]</span
+                >
+              </div>
+            </li>
+            <li class="li2">
+              <div class="de2">
+                &nbsp; &nbsp; swap<span class="br0">&#40;</span>arr<span
+                  class="sy0"
+                  >,</span
+                >
+                i<span class="sy0">,</span> minPos<span class="br0">&#41;</span
+                ><span class="sy0">;</span>
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1">&nbsp; <span class="br0">&#125;</span></div>
+            </li>
+            <li class="li1">
+              <div class="de1">
+                &nbsp; <span class="kw1">return</span> arr<span class="sy0"
+                  >;</span
+                >
+              </div>
+            </li>
+            <li class="li1">
+              <div class="de1"><span class="br0">&#125;</span></div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </container>
+
+    <container>
+      <div class="container">
+        <h1>堆積排序（heap sort）</h1>
+        <div class="javascript"><ol><li class="li1"><div class="de1"><span class="kw2">function</span> heap<span class="br0">&#40;</span>arr<span class="br0">&#41;</span> <span class="br0">&#123;</span> &nbsp;</div></li>
+<li class="li1"><div class="de1">&nbsp; &nbsp; <span class="kw2">function</span> heapify<span class="br0">&#40;</span>arr<span class="sy0">,</span> length<span class="sy0">,</span> node<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li>
+<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; <span class="kw2">const</span> left <span class="sy0">=</span> node <span class="sy0">*</span> <span class="nu0">2</span> <span class="sy0"~ezentity_gt+ezentity_lt~/span> <span class="nu0">1</span><span class="sy0">;</span></div></li>
+<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; <span class="kw2">const</span> right <span class="sy0">=</span> node <span class="sy0">*</span> <span class="nu0">2</span> <span class="sy0"~ezentity_gt+ezentity_lt~/span> <span class="nu0">2</span><span class="sy0">;</span></div></li>
+<li class="li2"><div class="de2">&nbsp; &nbsp; &nbsp; let max <span class="sy0">=</span> node<span class="sy0">;</span></div></li>
+<li class="li1"><div class="de1">&nbsp; </div></li>
+<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>left <span class="sy0">&lt;</span> length <span class="sy0">&amp;&amp;</span> arr<span class="br0">&#91;</span>left<span class="br0">&#93;</span> <span class="sy0">&gt;</span> arr<span class="br0">&#91;</span>max<span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li>
+<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; max <span class="sy0">=</span> left<span class="sy0">;</span></div></li>
+<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span></div></li>
+<li class="li2"><div class="de2">&nbsp; </div></li>
+<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>right <span class="sy0">&lt;</span> length <span class="sy0">&amp;&amp;</span> arr<span class="br0">&#91;</span>right<span class="br0">&#93;</span> <span class="sy0">&gt;</span> arr<span class="br0">&#91;</span>max<span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li>
+<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; max <span class="sy0">=</span> right<span class="sy0">;</span></div></li>
+<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span></div></li>
+<li class="li1"><div class="de1">&nbsp; </div></li>
+<li class="li2"><div class="de2">&nbsp; &nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>max <span class="sy0">!==</span> node<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li>
+<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#91;</span>arr<span class="br0">&#91;</span>node<span class="br0">&#93;</span><span class="sy0">,</span> arr<span class="br0">&#91;</span>max<span class="br0">&#93;</span><span class="br0">&#93;</span> <span class="sy0">=</span> <span class="br0">&#91;</span>arr<span class="br0">&#91;</span>max<span class="br0">&#93;</span><span class="sy0">,</span> arr<span class="br0">&#91;</span>node<span class="br0">&#93;</span><span class="br0">&#93;</span><span class="sy0">;</span></div></li>
+<li class="li1"><div class="de1">&nbsp;</div></li>
+<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; &nbsp; heapify<span class="br0">&#40;</span>arr<span class="sy0">,</span> length<span class="sy0">,</span> max<span class="br0">&#41;</span><span class="sy0">;</span></div></li>
+<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span></div></li>
+<li class="li2"><div class="de2">&nbsp; &nbsp; <span class="br0">&#125;</span></div></li>
+<li class="li1"><div class="de1">&nbsp; </div></li>
+<li class="li1"><div class="de1">&nbsp; &nbsp; <span class="co1">// build max heap</span></div></li>
+<li class="li1"><div class="de1">&nbsp; &nbsp; <span class="kw2">const</span> length <span class="sy0">=</span> arr.<span class="me1">length</span><span class="sy0">;</span></div></li>
+<li class="li1"><div class="de1">&nbsp; &nbsp; <span class="kw1">for</span> <span class="br0">&#40;</span>let i <span class="sy0">=</span> Math.<span class="me1">floor</span><span class="br0">&#40;</span>length <span class="sy0">/</span> <span class="nu0">2</span><span class="br0">&#41;</span> <span class="sy0">-</span> <span class="nu0">1</span><span class="sy0">;</span> i<span class="sy0">&gt;=</span><span class="nu0">0</span><span class="sy0">;</span> i<span class="sy0">--</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li>
+<li class="li2"><div class="de2">&nbsp; &nbsp; &nbsp; heapify<span class="br0">&#40;</span>arr<span class="sy0">,</span> length<span class="sy0">,</span> i<span class="br0">&#41;</span><span class="sy0">;</span></div></li>
+<li class="li1"><div class="de1">&nbsp; &nbsp; <span class="br0">&#125;</span></div></li>
+<li class="li1"><div class="de1">&nbsp; &nbsp; <span class="kw1">for</span> <span class="br0">&#40;</span>let i <span class="sy0">=</span> length <span class="sy0">-</span> <span class="nu0">1</span><span class="sy0">;</span> i <span class="sy0">&gt;</span> <span class="nu0">0</span><span class="sy0">;</span> i<span class="sy0">--</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li>
+<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; <span class="br0">&#91;</span>arr<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="sy0">,</span> arr<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#93;</span> <span class="sy0">=</span> <span class="br0">&#91;</span>arr<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">,</span> arr<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="br0">&#93;</span><span class="sy0">;</span></div></li>
+<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; heapify<span class="br0">&#40;</span>arr<span class="sy0">,</span> i<span class="sy0">,</span> <span class="nu0">0</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li>
+<li class="li2"><div class="de2">&nbsp; &nbsp; <span class="br0">&#125;</span></div></li>
+<li class="li1"><div class="de1">&nbsp; &nbsp; <span class="kw1">return</span> arr<span class="sy0">;</span></div></li>
+<li class="li1"><div class="de1"><span class="br0">&#125;</span></div></li>
+</ol></div>
+      </div>
+    </container>
+
+    <container>
+      <div class="container">
+        <h1>快速排序（quick sort）</h1>
+        <div class="javascript"><ol><li class="li1"><div class="de1"><span class="kw2">function</span> quick<span class="br0">&#40;</span>arr<span class="sy0">,</span> left <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">,</span> right <span class="sy0">=</span> arr.<span class="me1">length</span> <span class="sy0">-</span> <span class="nu0">1</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li>
+<li class="li1"><div class="de1">&nbsp; let len <span class="sy0">=</span> arr.<span class="me1">length</span><span class="sy0">,</span></div></li>
+<li class="li1"><div class="de1">&nbsp; &nbsp; index<span class="sy0">;</span></div></li>
+<li class="li1"><div class="de1">&nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>len <span class="sy0">&gt;</span> <span class="nu0">1</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li>
+<li class="li2"><div class="de2">&nbsp; &nbsp; index <span class="sy0">=</span> partition<span class="br0">&#40;</span>arr<span class="sy0">,</span> left<span class="sy0">,</span> right<span class="br0">&#41;</span><span class="sy0">;</span></div></li>
+<li class="li1"><div class="de1">&nbsp;</div></li>
+<li class="li1"><div class="de1">&nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>left <span class="sy0">&lt;</span> index <span class="sy0">-</span> <span class="nu0">1</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li>
+<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; quick<span class="br0">&#40;</span>arr<span class="sy0">,</span> left<span class="sy0">,</span> index <span class="sy0">-</span> <span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li>
+<li class="li1"><div class="de1">&nbsp; &nbsp; <span class="br0">&#125;</span></div></li>
+<li class="li2"><div class="de2">&nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>index <span class="sy0">&lt;</span> right<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li>
+<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; quick<span class="br0">&#40;</span>arr<span class="sy0">,</span> index<span class="sy0">,</span> right<span class="br0">&#41;</span><span class="sy0">;</span></div></li>
+<li class="li1"><div class="de1">&nbsp; &nbsp; <span class="br0">&#125;</span></div></li>
+<li class="li1"><div class="de1">&nbsp; <span class="br0">&#125;</span></div></li>
+<li class="li1"><div class="de1">&nbsp; <span class="kw1">return</span> arr<span class="sy0">;</span></div></li>
+<li class="li2"><div class="de2"><span class="br0">&#125;</span></div></li>
+<li class="li1"><div class="de1">&nbsp;</div></li>
+<li class="li1"><div class="de1"><span class="kw2">function</span> partition<span class="br0">&#40;</span>arr<span class="sy0">,</span> left<span class="sy0">,</span> right<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li>
+<li class="li1"><div class="de1">&nbsp; let middle <span class="sy0">=</span> Math.<span class="me1">floor</span><span class="br0">&#40;</span><span class="br0">&#40;</span>right <span class="sy0"~ezentity_gt+ezentity_lt~/span> left<span class="br0">&#41;</span> <span class="sy0">/</span> <span class="nu0">2</span><span class="br0">&#41;</span><span class="sy0">,</span></div></li>
+<li class="li1"><div class="de1">&nbsp; &nbsp; pivot <span class="sy0">=</span> arr<span class="br0">&#91;</span>middle<span class="br0">&#93;</span><span class="sy0">,</span></div></li>
+<li class="li2"><div class="de2">&nbsp; &nbsp; i <span class="sy0">=</span> left<span class="sy0">,</span></div></li>
+<li class="li1"><div class="de1">&nbsp; &nbsp; j <span class="sy0">=</span> right<span class="sy0">;</span></div></li>
+<li class="li1"><div class="de1">&nbsp;</div></li>
+<li class="li1"><div class="de1">&nbsp; <span class="kw1">while</span> <span class="br0">&#40;</span>i <span class="sy0">&lt;=</span> j<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li>
+<li class="li1"><div class="de1">&nbsp; &nbsp; <span class="kw1">while</span> <span class="br0">&#40;</span>arr<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy0">&lt;</span> pivot<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li>
+<li class="li2"><div class="de2">&nbsp; &nbsp; &nbsp; i<span class="sy0">++;</span></div></li>
+<li class="li1"><div class="de1">&nbsp; &nbsp; <span class="br0">&#125;</span></div></li>
+<li class="li1"><div class="de1">&nbsp; &nbsp; <span class="kw1">while</span> <span class="br0">&#40;</span>arr<span class="br0">&#91;</span>j<span class="br0">&#93;</span> <span class="sy0">&gt;</span> pivot<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li>
+<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; j<span class="sy0">--;</span></div></li>
+<li class="li1"><div class="de1">&nbsp; &nbsp; <span class="br0">&#125;</span></div></li>
+<li class="li2"><div class="de2">&nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>i <span class="sy0">&lt;=</span> j<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li>
+<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; <span class="br0">&#91;</span>arr<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">,</span> arr<span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="br0">&#93;</span> <span class="sy0">=</span> <span class="br0">&#91;</span>arr<span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="sy0">,</span> arr<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#93;</span><span class="sy0">;</span> </div></li>
+<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; i<span class="sy0">++;</span></div></li>
+<li class="li1"><div class="de1">&nbsp; &nbsp; &nbsp; j<span class="sy0">--;</span></div></li>
+<li class="li1"><div class="de1">&nbsp; &nbsp; <span class="br0">&#125;</span></div></li>
+<li class="li2"><div class="de2">&nbsp; <span class="br0">&#125;</span></div></li>
+<li class="li1"><div class="de1">&nbsp; <span class="kw1">return</span> i<span class="sy0">;</span></div></li>
+<li class="li1"><div class="de1"><span class="br0">&#125;</span></div></li>
+</ol></div>
       </div>
     </container>
 
@@ -95,12 +861,12 @@
         };
 
       $(".next").click(function () {
-        count < 1 ? count++ : (count = 0);
+        count < 7 ? count++ : (count = 0);
         scrollTo(count);
       });
 
       $(".prev").click(function () {
-        count > 0 ? count-- : (count = 1);
+        count > 0 ? count-- : (count = 7);
         scrollTo(count);
       });
     </script>
