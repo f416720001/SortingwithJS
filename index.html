@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Ubuntu");
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap");
+      body {
+        font-family: "Ubuntu", "Noto Sans TC", sans-serif;
+        background-color: #242424;
+        padding: 0;
+        margin: 0;
+        border-left: 10px solid #f5df12;
+        color: aliceblue;
+      }
+      p {
+        border-left: 4px solid orange;
+        padding-left: 16px;
+      }
+      container {
+        display: grid;
+        place-items: center;
+        height: 100vh;
+      }
+      .navigation {
+        position: fixed;
+        right: 20px;
+        top: 20px;
+      }
+
+      button {
+        padding: 2px 7px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        color: white;
+        background-color: orange;
+      }
+
+      #num {
+        display: inline;
+      }
+
+      li {
+        font-size: 1.5em;
+      }
+    </style>
+    <div class="navigation">
+      <button class="prev">Prev</button>
+      <span id="num">0</span>
+      <button class="next">Next</button>
+    </div>
+    <container>
+      <div class="container">
+        <img
+          src="https://kanboo.github.io/2017/12/30/JS-studynotes/js_01.png"
+          alt=""
+        />
+        <h1>Sorting Algorithm 排序演算法</h1>
+        <p>F12 / Ctrl+Shift+I 打開控制台</p>
+        <img src="01.png" alt="" style="" />
+      </div>
+    </container>
+    <container>
+      <div class="container">
+        <h1>穩定的排序</h1>
+        <li>泡沫排序（bubble sort）— O(n<sup>2</sup>)</li>
+        <li>插入排序（insertion sort）— O(n<sup>2</sup>)</li>
+        <li>合併排序（merge sort）— O(nlogn)</li>
+        <h1>不穩定的排序</h1>
+        <li>選擇排序（selection sort）— O(n<sup>2</sup>)</li>
+        <li>堆積排序（heap sort）— O(nlogn)</li>
+        <li>快速排序（quick sort）— O(nlogn)</li>
+      </div>
+    </container>
+
+    <script src="sort.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      var count = 0,
+        sections = $("container"),
+        scrollTo = function (index) {
+          $("#num").text(count);
+          $("html, body").animate(
+            {
+              scrollTop: sections.eq(index).offset().top,
+            },
+            "slow"
+          );
+        };
+
+      $(".next").click(function () {
+        count < 1 ? count++ : (count = 0);
+        scrollTo(count);
+      });
+
+      $(".prev").click(function () {
+        count > 0 ? count-- : (count = 1);
+        scrollTo(count);
+      });
+    </script>
+  </body>
+</html>
